@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="guilh"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-04-18 11:04:54 "/>
+        <attribute name="created" value="Z3VpbGg7REVTS1RPUC1NT1JNSVRPOzIwMjMtMDQtMTg7IjEwOjQzOjI1ICI7Mjg2MQ=="/>
+        <attribute name="edited" value="Z3VpbGg7REVTS1RPUC1NT1JNSVRPOzIwMjMtMDQtMTg7IjEwOjU0OjIzICI7NDtndWlsaDtERVNLVE9QLU1PUk1JVE87MjAyMy0wNC0xMTsiMTA6Mjk6MDIgIjtNREMuZnByZzs2NjMy"/>
+        <attribute name="edited" value="Z3VpbGg7REVTS1RPUC1NT1JNSVRPOzIwMjMtMDQtMTg7IjEwOjU2OjAzICI7MjthbHVubztTMkNBRC01OTsyMDIzLTA0LTExOyIwNzowOTowMCAiO01NQy5mcHJnOzYwMDE="/>
+        <attribute name="edited" value="Z3VpbGg7REVTS1RPUC1NT1JNSVRPOzIwMjMtMDQtMTg7IjExOjA0OjU0ICI7MjsyOTcw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="X" type="Integer" array="False" size=""/>
+            <output expression="&quot;ESCREVA O VALOR DE X &quot;" newline="True"/>
+            <input variable="X"/>
+            <declare name="Y" type="Integer" array="False" size=""/>
+            <output expression="&quot;ESCREVA O VALOR DE Y &quot;" newline="True"/>
+            <input variable="Y"/>
+            <declare name="Z" type="Integer" array="False" size=""/>
+            <assign variable="Z" expression="0"/>
+            <declare name="RESTO" type="Integer" array="False" size=""/>
+            <declare name="X2" type="Integer" array="False" size=""/>
+            <assign variable="X2" expression="X"/>
+            <declare name="Y2" type="Integer" array="False" size=""/>
+            <assign variable="Y2" expression="Y"/>
+            <declare name="Z2" type="Integer" array="False" size=""/>
+            <assign variable="Z2" expression="Z"/>
+            <declare name="SOMA" type="Integer" array="False" size=""/>
+            <if expression="X&lt;Y">
+                <then>
+                    <assign variable="Z" expression="X"/>
+                    <assign variable="X" expression="Y"/>
+                    <assign variable="Y" expression="Z"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="RESTO" expression="X % Y"/>
+            <while expression="RESTO != 0">
+                <assign variable="X" expression="Y"/>
+                <assign variable="Y" expression="RESTO"/>
+                <assign variable="RESTO" expression="X % Y"/>
+            </while>
+            <output expression="&quot;O MDC &#201; IGUAL A &quot; &amp;Y" newline="True"/>
+            <if expression="X&lt;Y">
+                <then>
+                    <assign variable="Z2" expression="X2"/>
+                    <assign variable="X2" expression="Y2"/>
+                    <assign variable="Y2" expression="Z2"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="SOMA" expression="X2"/>
+            <while expression="SOMA %Y2 != 0">
+                <assign variable="SOMA" expression="SOMA+X2"/>
+            </while>
+            <output expression="&quot;O MMC &#201; &quot; &amp;SOMA" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

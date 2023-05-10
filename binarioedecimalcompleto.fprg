@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="aluno"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-05-02 07:55:04 "/>
+        <attribute name="created" value="YWx1bm87UzJDQUQtNTk7MjAyMy0wNC0xODsiMDc6MDY6NDYgIjsyMjI5"/>
+        <attribute name="edited" value="YWx1bm87UzJDQUQtNTk7MjAyMy0wNS0wMjsiMDc6NTU6MDQgIjsyOzIzMzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Deseja converter de decimal para binario (1) ou de binario para decimal?(2)&quot;" newline="True"/>
+            <declare name="OPCAO" type="Integer" array="False" size=""/>
+            <input variable="OPCAO"/>
+            <if expression="OPCAO = 1">
+                <then>
+                    <declare name="X" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Escreva o valor decimal&quot;" newline="True"/>
+                    <input variable="X"/>
+                    <declare name="Y" type="Integer" array="False" size=""/>
+                    <declare name="MISTO" type="String" array="False" size=""/>
+                    <assign variable="MISTO" expression="&quot; &quot;"/>
+                    <while expression="X != 0">
+                        <assign variable="Y" expression="X%2"/>
+                        <assign variable="MISTO" expression="Y &amp; MISTO"/>
+                        <output expression="&quot;Valor &quot; &amp;Y" newline="True"/>
+                        <assign variable="X" expression="X/2"/>
+                    </while>
+                    <output expression="&quot;O valor em bin&#225;rio &#233; de: &quot; &amp; MISTO" newline="True"/>
+                </then>
+                <else>
+                    <declare name="binario" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Escreva o valor binario&quot;" newline="True"/>
+                    <input variable="binario"/>
+                    <declare name="decimal" type="Integer" array="False" size=""/>
+                    <assign variable="decimal" expression="0"/>
+                    <declare name="potencia" type="Integer" array="False" size=""/>
+                    <assign variable="potencia" expression="1"/>
+                    <declare name="digito" type="Integer" array="False" size=""/>
+                    <while expression="binario &gt; 0">
+                        <assign variable="digito" expression="binario%10"/>
+                        <assign variable="decimal" expression="decimal + digito*potencia"/>
+                        <assign variable="potencia" expression="potencia*2"/>
+                        <assign variable="binario" expression="binario/10"/>
+                    </while>
+                    <output expression="&quot;O numero decimal equivale a: &quot; &amp;decimal" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Potencia" type="Integer" variable="retorno">
+        <parameters>
+            <parameter name="base" type="Integer" array="False"/>
+            <parameter name="expoente" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="retorno" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="retorno" expression="0"/>
+            <assign variable="contador" expression="1"/>
+            <do expression="contador &lt; expoente">
+                <assign variable="retorno" expression="retorno + base"/>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
